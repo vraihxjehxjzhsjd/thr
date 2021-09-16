@@ -3,6 +3,8 @@ global count
 count = 0
 
 def start_client(app):
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
     app.start()
     me = app.get_me()
     print(f"Log as @{me.username}")
