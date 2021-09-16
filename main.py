@@ -1,4 +1,5 @@
 import threading, pyrogram, asyncio
+from pyrogram import filters
 global count
 count = 0
 
@@ -6,7 +7,7 @@ def start_client(app):
     app.start()
     me = app.get_me()
     print(f"Log as @{me.username}")
-    @app.on_message(pyrogram.filters("к", ["о", "О"]))
+    @app.on_message(filters.command("а", "а"))
     async def flood(client, message):
         try:
             a = count
